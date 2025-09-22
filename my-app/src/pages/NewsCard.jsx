@@ -7,8 +7,13 @@ const NewsCard = ({ title, description, image, isLoading }) => {
       {isLoading ? (
         <div className="skeleton skeleton-image" />
       ) : (
-        <div className="news-image" style={{ backgroundImage: `url(${image})` }}>
-          <div className="overlay" />
+        <div className="news-image-wrapper" onContextMenu={(e) => e.preventDefault()}>
+          <div
+            className="news-image"
+            style={{ backgroundImage: `url(${image})` }}
+            draggable={false} // prevents drag & drop
+          />
+          <div className="overlay" /> {/* overlay covers image */}
           <div className="watermark">© News Blog</div>
         </div>
       )}
