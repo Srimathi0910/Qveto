@@ -203,3 +203,143 @@ html, body, #root {
     width: 100%;
   }
 }
+.news-image {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  user-select: none;       /* prevent selection */
+  -webkit-user-drag: none; /* prevent dragging */
+}
+
+
+.news-image {
+  width: 100%;
+  height: 200px;
+  background-size: cover;       /* scales image properly */
+  background-position: center;  /* centers image */
+  user-select: none;            /* prevent selection */
+  -webkit-user-drag: none;      /* prevent dragging */
+}
+/* Home & Container */
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.home-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.news-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* News Card */
+.news-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  width: 300px;
+  position: relative;
+}
+
+/* Image */
+.news-image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Transparent overlay to block right-click */
+.news-image .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: default;
+  z-index: 2;
+}
+
+/* Watermark */
+.news-image .watermark {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  color: rgba(255,255,255,0.7);
+  background: rgba(0,0,0,0.3);
+  padding: 2px 6px;
+  font-size: 12px;
+  border-radius: 4px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Card Content */
+.news-content {
+  padding: 16px;
+}
+
+.news-headline {
+  font-size: 1.2rem;
+  margin: 0 0 10px;
+  font-weight: 600;
+}
+
+.news-description {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* Skeleton Loader */
+.skeleton {
+  background-color: #ddd;
+  border-radius: 4px;
+  animation: pulse 1.2s infinite ease-in-out;
+}
+
+.skeleton-image {
+  height: 180px;
+}
+
+.skeleton-title {
+  height: 20px;
+  width: 70%;
+  margin-bottom: 12px;
+}
+
+.skeleton-text {
+  height: 14px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.skeleton-text.short {
+  width: 60%;
+}
+
+@keyframes pulse {
+  0% { background-color: #eee; }
+  50% { background-color: #ddd; }
+  100% { background-color: #eee; }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .news-card { width: 100%; }
+  .news-headline { font-size: 1rem; }
+  .news-description { font-size: 0.9rem; }
+}

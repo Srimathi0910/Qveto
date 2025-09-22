@@ -1,8 +1,6 @@
-// src/pages/Home.jsx
 import React, { useState, useEffect } from 'react';
 import NewsCard from './NewsCard.jsx';
 import '../styles.css';
-import NewsImage from '../images/news-image.jpg';
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -13,19 +11,19 @@ const Home = () => {
       _id: 1,
       headline: 'Tech Innovation in 2025',
       description: 'New technologies are transforming the world in unexpected ways. Here’s what to expect...',
-      image: NewsImage,
+      image: "https://res.cloudinary.com/do4vshn72/image/upload/v1758519395/news-image_bp9a6f.jpg",
     },
     {
       _id: 2,
       headline: 'Global Climate Update',
       description: 'Global temperatures are reaching new highs. Climate action is more urgent than ever.',
-      image: NewsImage,
+      image: "https://res.cloudinary.com/do4vshn72/image/upload/v1758519395/news-image_bp9a6f.jpg",
     },
     {
       _id: 3,
       headline: 'AI Changing Education',
       description: 'AI tools are revolutionizing how students learn and teachers teach.',
-      image: NewsImage,
+      image: "https://res.cloudinary.com/do4vshn72/image/upload/v1758519395/news-image_bp9a6f.jpg",
     },
   ];
 
@@ -41,9 +39,7 @@ const Home = () => {
       <h2 className="home-title">Latest News</h2>
       <div className="news-grid">
         {loading
-          ? Array(3).fill().map((_, i) => (
-              <NewsCard key={i} isLoading={true} />
-            ))
+          ? Array(3).fill().map((_, i) => <NewsCard key={i} isLoading={true} />)
           : news.map((article) => (
               <NewsCard
                 key={article._id}

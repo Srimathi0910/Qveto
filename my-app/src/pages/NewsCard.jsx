@@ -1,4 +1,3 @@
-// src/pages/NewsCard.jsx
 import React from 'react';
 import '../styles.css';
 
@@ -8,7 +7,10 @@ const NewsCard = ({ title, description, image, isLoading }) => {
       {isLoading ? (
         <div className="skeleton skeleton-image" />
       ) : (
-        <img src={image} alt={title} className="news-image" />
+        <div className="news-image" style={{ backgroundImage: `url(${image})` }}>
+          <div className="overlay" />
+          <div className="watermark">© News Blog</div>
+        </div>
       )}
 
       <div className="news-content">
